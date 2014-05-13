@@ -54,7 +54,7 @@ public class Map {
 					System.out.print( " l |");
 				}
 				else if (generatedMap[i][j].getSaturation() == 0 && generatedMap[i][j].getElevation() > 0){
-					System.out.print( " l |");
+					System.out.print( " e |");
 				}
 			}
 		}
