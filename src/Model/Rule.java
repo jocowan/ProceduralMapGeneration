@@ -1,5 +1,5 @@
 package Model;
 
-public abstract class Rule {
-	protected abstract void getRuling(Map theMap);
+public interface Rule {
+	public Map getRuling(Map theMap);
 }

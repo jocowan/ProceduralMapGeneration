@@ -2,7 +2,7 @@ package Model;
 
 public class Tile {
 	private int elevation = 0;
-	private int saturation = -1;
+	private int saturation = 0;
 	
 	public int getElevation() {
 		return elevation;

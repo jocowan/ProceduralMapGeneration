@@ -1,9 +1,8 @@
 package Model;
 
-public class IslandRule extends Rule {
+public class IslandRule implements Rule {
 
-	@Override
-	protected void getRuling(Map theMap) {
+	public Map getRuling(Map theMap) {
 		// TODO implement water to surround the map
 		int i;
 		
@@ -11,25 +10,33 @@ public class IslandRule extends Rule {
 			Tile waterTile = new Tile();
 			waterTile.setSaturation(100);
 			waterTile.setElevation(0);
+			
+			System.out.print(i);
+			System.out.print(0);
+			
 			theMap.setTile(i, 0, waterTile);
 			
 			Tile waterTile2 = new Tile();
-			waterTile.setSaturation(100);
-			waterTile.setElevation(0);
+			waterTile2.setSaturation(100);
+			
+			System.out.print(i);
+			System.out.print(theMap.getLengthY()-1);
+			System.out.print('\n');
+
 			theMap.setTile(i, theMap.getLengthY()-1, waterTile2);
 		}
 		
 		for (i = 0; i < theMap.getLengthY(); i++){
 			Tile waterTile = new Tile();
 			waterTile.setSaturation(100);
-			waterTile.setElevation(0);
 			theMap.setTile(0, i, waterTile);
 			
 			Tile waterTile2 = new Tile();
-			waterTile.setSaturation(100);
-			waterTile.setElevation(0);
+			waterTile2.setSaturation(100);
 			theMap.setTile(theMap.getLengthX()-1, i, waterTile2);
 		}
+		
+		return theMap;
 	}
 
 }
