@@ -56,6 +56,12 @@ public class Map {
 				else if (generatedMap[i][j].getSaturation() == 0 && generatedMap[i][j].getElevation() > 0){
 					System.out.print( " e |");
 				}
+				else if (generatedMap[i][j].getSaturation() == 50){
+					System.out.print( " r |");
+				}
+				else {
+					System.out.print( " ? |");
+				}
 			}
 		}
 		

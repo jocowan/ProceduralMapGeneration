@@ -38,5 +38,4 @@ public class IslandRule implements Rule {
 		
 		return theMap;
 	}
-
 }
