@@ -1,19 +1,19 @@
-package View;
-
-import Model.IslandRule;
-import Model.Map;
-import Model.MapGenerator;
-import Model.RiverRule;
-import Model.Rule;
-import Model.Tile;
-import Controller.*;
+package view;
 
 import java.util.Random;
 
+import controller.*;
+import model.IslandRule;
+import model.Map;
+import model.MapGenerator;
+import model.RiverRule;
+import model.Rule;
+import model.Tile;
+
 public class MapView {
 	public static void main (String[] args){
-		Map map = MapGenerator.makeEmptyMap(6, 6);
-		RiverRule rule = new RiverRule();
+		Map map = MapGenerator.makeEmptyMap(10,10);
+		IslandRule rule = new IslandRule();
 		
 		map = rule.getRuling(map);		
 		map.printMap();

@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 public class Map {
 	private int lengthX = -1;
