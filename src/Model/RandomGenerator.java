@@ -7,13 +7,13 @@ public class RandomGenerator extends Random {
 	/**
 	 * Public singleton random number generator class with optional seed
 	 */
-	private static final long serialVersionUID = 6557344800504980326L;
-	private static RandomGenerator singleton = null;
+	
+	protected static Random singleton = null;
 	private long seed;
 	
-	public static RandomGenerator getInstance() {
+	public static Random getInstance() {
 		if (singleton == null){
-			singleton = new RandomGenerator();
+			singleton = new Random();
 		}
 		return singleton;
 	}
@@ -22,7 +22,9 @@ public class RandomGenerator extends Random {
 		return seed;
 	}
 
+	@Override
 	public void setSeed(long seed) {
 		this.seed = seed;
+		RandomGenerator.singleton.setSeed(seed);
 	}
 }

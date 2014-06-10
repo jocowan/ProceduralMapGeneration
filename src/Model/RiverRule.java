@@ -9,6 +9,9 @@ public class RiverRule implements Rule {
 		int riverStart = RandomGenerator.getInstance().nextInt(4);
 		int riverStop = RandomGenerator.getInstance().nextInt(4);
 		
+		System.out.println("Start: "+riverStart);
+		System.out.println("Stop "+riverStop);
+		
 		int StartLocationX;
 		int StartLocationY;
 		
