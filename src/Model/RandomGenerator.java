@@ -8,7 +8,7 @@ public class RandomGenerator extends Random {
 	 * Public singleton random number generator class with optional seed
 	 */
 	
-	protected static Random singleton = null;
+	private static Random singleton = null;
 	private long seed;
 	
 	public static Random getInstance() {
