@@ -5,22 +5,35 @@ import java.awt.Color;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.net.URL;
 
 public class GameMainStart extends Applet implements Runnable {
+	
+	private Image image, waterTile;
+	private Graphics second;
+	private URL base;
 
 	@Override
 	public void init() {
 		setSize(800, 480);
-		setBackground(Color.CYAN);
+		setBackground(Color.cyan);
 		setFocusable(true);
 		
 		Frame frame = (Frame) this.getParent().getParent();
-		frame.setTitle("Example");
+		frame.setTitle("Map View Alpha");
+		
+		try {
+			base = getDocumentBase();
+			System.out.print(base);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		waterTile = getImage(base, "../resources/water_tile.gif");
 	}
 
 	@Override
 	public void start() {
-		// TODO Auto-generated method stub
 		Thread mainThread = new Thread(this);
 		mainThread.start();
 	}
@@ -43,7 +56,7 @@ public class GameMainStart extends Applet implements Runnable {
 	public void run() {
 		while(true){
 			// main game loop
-			update();
+			repaint();
 			try{
 				Thread.sleep(17);
 			}
@@ -55,8 +68,8 @@ public class GameMainStart extends Applet implements Runnable {
 	
 	@Override
 	public void update(Graphics g){
-		Image image = null;
-		Graphics second = null;
+		image = null;
+		second = null;
 		if (image == null) {
 			image = createImage(this.getWidth(), this.getHeight());
 			second = image.getGraphics();
@@ -74,6 +87,7 @@ public class GameMainStart extends Applet implements Runnable {
 	@Override
 	public void paint(Graphics g) {
 		g.drawString("hello", 30, 30);
+		g.drawImage(waterTile, 80, 80, this);
 
 	}
 }
