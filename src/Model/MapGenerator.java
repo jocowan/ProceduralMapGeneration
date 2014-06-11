@@ -13,7 +13,7 @@ public final class MapGenerator {
 	 */
 	public static Map makeEmptyMap(int theLength, int theWidth){
 		Map theMap = new Map(theLength, theWidth);
-		theMap = fillMap(theMap, new Tile());
+		fillMap(theMap, new Tile());
 		return theMap;
 	}
 	
@@ -24,7 +24,7 @@ public final class MapGenerator {
 	 * @param theTile
 	 * @return
 	 */
-	public static Map fillMap(Map theMap, Tile theTile){
+	public static void fillMap(Map theMap, Tile theTile){
 		int i;
 		int j;
 		
@@ -33,6 +33,5 @@ public final class MapGenerator {
 				theMap.setTile(i, j, theTile);
 			}
 		}
-		return theMap;
 	}
 }
