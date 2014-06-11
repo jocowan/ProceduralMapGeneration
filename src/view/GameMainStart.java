@@ -9,7 +9,7 @@ import java.net.URL;
 
 public class GameMainStart extends Applet implements Runnable {
 	
-	private Image image, waterTile;
+	private Image image, waterTile, grassTile;
 	private Graphics second;
 	private URL base;
 
@@ -29,7 +29,8 @@ public class GameMainStart extends Applet implements Runnable {
 			// TODO: handle exception
 		}
 		
-		waterTile = getImage(base, "../resources/water_tile.gif");
+		waterTile = getImage(base, "../resources/water_tile.png");
+		grassTile = getImage(base, "../resources/grass_tile.png");
 	}
 
 	@Override
@@ -88,6 +89,7 @@ public class GameMainStart extends Applet implements Runnable {
 	public void paint(Graphics g) {
 		g.drawString("hello", 30, 30);
 		g.drawImage(waterTile, 80, 80, this);
+		g.drawImage(grassTile, 144, 80, this);
 
 	}
 }
