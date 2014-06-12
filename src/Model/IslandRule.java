@@ -17,17 +17,10 @@ public class IslandRule implements Rule {
 			waterTile.setSaturation(100);
 			waterTile.setElevation(0);
 
-			System.out.print(i);
-			System.out.print(0);
-
 			theMap.setTile(i, 0, waterTile);
 
 			Tile waterTile2 = new Tile();
 			waterTile2.setSaturation(100);
-
-			System.out.print(i);
-			System.out.print(theMap.getLengthY() - 1);
-			System.out.print('\n');
 
 			theMap.setTile(i, theMap.getLengthY() - 1, waterTile2);
 		}
@@ -48,16 +41,13 @@ public class IslandRule implements Rule {
 		int i;
 		int j;
 		
+		// magic mater percentage
 		int waterPercentage = 30;
 		
+		RandomGenerator.getInstance().nextInt(TOTAL_EDGE);
 		
 		
 		
-	}
-
-	@Override
-	public Map getRuling(Map theMap, String[][] args) {
-		// TODO Auto-generated method stub
-		return null;
+		
 	}
 }

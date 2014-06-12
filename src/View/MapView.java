@@ -17,7 +17,7 @@ public class MapView {
 	
 	public static Map getMap(String[] args) {
 		Map map = MapGenerator.makeEmptyMap(10, 10);
-		Rule rule = new IslandRule();
+		IslandRule rule = new IslandRule();
 
 		map = rule.getRuling(map, null);
 		return map;

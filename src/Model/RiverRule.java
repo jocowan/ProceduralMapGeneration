@@ -3,15 +3,17 @@ package model;
 public class RiverRule implements Rule {
 	
 	@Override
-	public Map getRuling(Map theMap, String[] args[]) {
+	public Map getRuling(Map theMap, String args[]) {
 		// TODO Auto-generated method stub
 		
-		int riverStart = RandomGenerator.getInstance().nextInt(4);
-		int riverStop = RandomGenerator.getInstance().nextInt(4);
+		int riverStart = RandomGenerator.getInstance().nextInt(TOTAL_EDGE);
+		int riverStop = RandomGenerator.getInstance().nextInt(TOTAL_EDGE);
 		
+		// starting x,y coords
 		int StartLocationX;
 		int StartLocationY;
 		
+		// stopping x,y coords
 		int StopLocationX;
 		int StopLocationY;
 		

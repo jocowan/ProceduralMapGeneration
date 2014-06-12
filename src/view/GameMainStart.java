@@ -32,7 +32,7 @@ public class GameMainStart extends Applet implements Runnable {
 		backg = backbuffer.getGraphics();
 
 
-		// setFocusable(true);
+		setFocusable(true);
 
 		Frame frame = (Frame) this.getParent().getParent();
 		frame.setTitle("Map View Alpha");
@@ -76,7 +76,6 @@ public class GameMainStart extends Applet implements Runnable {
 
 	@Override
 	public void update(Graphics g) {
-
 		g.drawImage(backbuffer, 0, 0, this);
 	}
 
