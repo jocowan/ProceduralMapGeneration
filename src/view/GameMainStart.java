@@ -12,6 +12,10 @@ import model.Map;
 
 public class GameMainStart extends Applet implements Runnable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7572571961634325708L;
 	private Image backbuffer;
 	private Graphics backg;
 	private URL base;

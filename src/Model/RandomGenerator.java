@@ -5,6 +5,10 @@ import java.util.Random;
 public class RandomGenerator extends Random {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7657596313265065119L;
+	/**
 	 * Public singleton random number generator class with optional seed
 	 */
 	
