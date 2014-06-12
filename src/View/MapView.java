@@ -25,8 +25,8 @@ public class MapView {
 
 	public static void printMap(Map theMap, Graphics theGraphics, ImageObserver theObserver) {
 		
-		Image waterTile = Toolkit.getDefaultToolkit().getImage("../../resources/grass_tile.png");
-		Image grassTile = Toolkit.getDefaultToolkit().getImage("../../resources/grass_tile.png");
+		Image waterTile = Toolkit.getDefaultToolkit().getImage("../resources/grass_tile.png");
+		Image grassTile = Toolkit.getDefaultToolkit().getImage("../resources/grass_tile.png");
 		// theMap.printMap();
 		
 		theGraphics.drawString("help", 0, 0);
