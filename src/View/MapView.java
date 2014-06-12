@@ -8,15 +8,16 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import model.IslandRule;
 import model.Map;
 import model.MapGenerator;
-import model.RiverRule;
+import model.Rule;
 
 public class MapView {
 	
 	public static Map getMap(String[] args) {
 		Map map = MapGenerator.makeEmptyMap(10, 10);
-		RiverRule rule = new RiverRule();
+		Rule rule = new IslandRule();
 
 		map = rule.getRuling(map);
 		return map;

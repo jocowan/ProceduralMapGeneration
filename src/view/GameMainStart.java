@@ -10,7 +10,7 @@ import model.Map;
 public class GameMainStart extends Applet implements Runnable {
 
 	/**
-	 * 
+	 * double buffering system to allow for continuous updates at 60fps
 	 */
 	private static final long serialVersionUID = -7572571961634325708L;
 	private Image backbuffer;
@@ -58,7 +58,8 @@ public class GameMainStart extends Applet implements Runnable {
 	}
 
 	/**
-	 * main game run method contains the main game loop to be threaded
+	 * main game run method
+	 * main game loop that updates all the elements
 	 */
 	@Override
 	public void run() {
