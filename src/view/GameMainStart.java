@@ -21,8 +21,11 @@ public class GameMainStart extends Applet implements Runnable {
 
 	@Override
 	public void init() {
-		width = getSize().width;
-		height = getSize().height;
+		
+		base = getDocumentBase();
+				
+		width = 800;
+		height = 800;
 
 		setSize(width, height);
 
@@ -81,7 +84,6 @@ public class GameMainStart extends Applet implements Runnable {
 
 	@Override
 	public void paint(Graphics g) {
-		MapView.printMap(theNewMap, g, this);
 	}
 
 }

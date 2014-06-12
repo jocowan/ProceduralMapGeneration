@@ -2,13 +2,16 @@ package view;
 
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.awt.image.ImageProducer;
-import java.net.URL;
-import java.applet.Applet;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
-import model.IslandRule;
+import javax.imageio.ImageIO;
+
 import model.Map;
 import model.MapGenerator;
 import model.RiverRule;
@@ -24,14 +27,10 @@ public class MapView {
 	}
 
 	public static void printMap(Map theMap, Graphics theGraphics, ImageObserver theObserver) {
-		
-		Image waterTile = Toolkit.getDefaultToolkit().getImage("../resources/grass_tile.png");
-		Image grassTile = Toolkit.getDefaultToolkit().getImage("../resources/grass_tile.png");
 		// theMap.printMap();
 		
-		theGraphics.drawString("help", 0, 0);
-		
-		System.out.println(grassTile.toString());
+		BufferedImage waterTile = getWaterTile();
+		BufferedImage grassTile = getGrassTile();		
 
 		int lengthX = theMap.getLengthX();
 		int lengthY = theMap.getLengthY();
@@ -76,5 +75,27 @@ public class MapView {
 		}
 		System.out.print("\n");
 	}
-
+	
+	private static BufferedImage getWaterTile(){
+		
+		BufferedImage waterTile = null;
+		try {
+			waterTile = ImageIO.read(new File(System.getProperty("user.dir")+"\\..\\resources\\water_tile.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return waterTile;
+	}
+	
+	private static BufferedImage getGrassTile(){
+		BufferedImage grassTile = null;
+		try {
+			grassTile = ImageIO.read(new File(System.getProperty("user.dir")+"\\..\\resources\\water_tile.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return grassTile;
+	}
 }
