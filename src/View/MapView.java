@@ -11,7 +11,6 @@ import javax.imageio.ImageIO;
 import model.IslandRule;
 import model.Map;
 import model.MapGenerator;
-import model.Rule;
 
 public class MapView {
 	

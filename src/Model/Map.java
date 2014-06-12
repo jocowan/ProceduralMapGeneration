@@ -14,11 +14,16 @@ public class Map {
 	
 	
 	public int getLengthX() {
-		return lengthX;
+		return this.lengthX;
 	}
 
 	public int getLengthY() {
-		return lengthY;
+		return this.lengthY;
+	}
+	
+	public int getPerimeterLength(){
+		
+		return this.lengthX*2 + (this.lengthY-2)*2;
 	}
 	
 	public void setTile(int theX, int theY, Tile theTile){
@@ -32,6 +37,6 @@ public class Map {
 	}
 	
 	public Tile getTile(int theX, int theY){
-		return generatedMap[theX][theY];
+		return this.generatedMap[theX][theY];
 	}
 }
