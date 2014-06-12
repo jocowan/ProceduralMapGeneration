@@ -4,16 +4,16 @@ public class RiverRule implements Rule {
 	
 	@Override
 	public Map getRuling(Map theMap, String args[]) {
-		// TODO Auto-generated method stub
-		
+		// Select two sides for the river to start and finish on.
+		// The sides may be the same.
 		int riverStart = RandomGenerator.getInstance().nextInt(TOTAL_EDGE);
 		int riverStop = RandomGenerator.getInstance().nextInt(TOTAL_EDGE);
 		
-		// starting x,y coords
+		// starting x,y coords for the river
 		int StartLocationX;
 		int StartLocationY;
 		
-		// stopping x,y coords
+		// stopping x,y coords for the river
 		int StopLocationX;
 		int StopLocationY;
 		

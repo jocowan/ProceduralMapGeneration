@@ -8,5 +8,12 @@ public interface Rule {
 	public static int WEST_EDGE = 3;
 	public static int TOTAL_EDGE = 4;
 	
+	/**
+	 * applies the class rule to the map and also applies any arguments from the arguments string
+	 * 
+	 * @param theMap
+	 * @param args
+	 * @return
+	 */
 	public Map getRuling(Map theMap, String args[]);
 }
