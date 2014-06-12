@@ -26,9 +26,7 @@ public class MapView {
 		return map;
 	}
 
-	public static void printMap(Map theMap, Graphics theGraphics, ImageObserver theObserver) {
-		// theMap.printMap();
-		
+	public static void printMap(Map theMap, Graphics theGraphics, ImageObserver theObserver) {		
 		BufferedImage waterTile = getWaterTile();
 		BufferedImage grassTile = getGrassTile();		
 
@@ -42,6 +40,8 @@ public class MapView {
 		for (i = 0; i < lengthX; i++) {
 			System.out.print(" - +");
 		}
+		
+		// iterate through the map and print out each tile as needed
 		for (i = 0; i < lengthX; i++) {
 			System.out.print("\n");
 			System.out.print("|");

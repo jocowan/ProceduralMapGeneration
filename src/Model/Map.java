@@ -34,42 +34,4 @@ public class Map {
 	public Tile getTile(int theX, int theY){
 		return generatedMap[theX][theY];
 	}
-	
-	public void printMap(){
-		int i = 0;
-		int j = 0;
-		
-		System.out.print("+");
-		for (i = 0; i < this.lengthX; i++){
-			System.out.print(" - +");
-		}		
-		for (i = 0; i < this.lengthX; i++) {
-			System.out.print("\n");
-			System.out.print("|");
-			for (j = 0; j < this.lengthY; j++ ) {
-				if (generatedMap[i][j].getSaturation() == 100){
-					System.out.print(" w |");
-				}
-				else if (generatedMap[i][j].getSaturation() == 0){
-					System.out.print( " l |");
-				}
-				else if (generatedMap[i][j].getSaturation() == 0 && generatedMap[i][j].getElevation() > 0){
-					System.out.print( " e |");
-				}
-				else if (generatedMap[i][j].getSaturation() == 50){
-					System.out.print( " r |");
-				}
-				else {
-					System.out.print( " ? |");
-				}
-			}
-		}
-		
-		System.out.print("\n");
-		System.out.print("+");
-		for (i = 0; i < this.lengthX; i++){
-			System.out.print(" - +");
-		}
-		System.out.print("\n");
-	}
 }
