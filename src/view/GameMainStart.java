@@ -1,12 +1,9 @@
 package view;
 
 import java.applet.Applet;
-import java.awt.Color;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.image.ImageObserver;
-import java.net.URL;
 
 import model.Map;
 
@@ -18,16 +15,12 @@ public class GameMainStart extends Applet implements Runnable {
 	private static final long serialVersionUID = -7572571961634325708L;
 	private Image backbuffer;
 	private Graphics backg;
-	private URL base;
 	private Map theNewMap;
 
 	int width, height;
 
 	@Override
-	public void init() {
-		
-		base = getDocumentBase();
-				
+	public void init() {				
 		width = 800;
 		height = 800;
 
