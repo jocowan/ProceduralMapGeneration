@@ -49,19 +49,23 @@ public class MapView {
 				if (theMap.getTile(i, j).getSaturation() == 100) {
 					System.out.print(" w |");
 					
-					theGraphics.drawImage(waterTile, i+64, j+64, theObserver);
+					theGraphics.drawImage(waterTile, i*64, j*64, theObserver);
 					
+				// if the tile corresponds to grass
 				} else if (theMap.getTile(i, j).getSaturation() == 0) {
 					System.out.print(" l |");
+					theGraphics.drawImage(grassTile, i*64, j*64, theObserver);
 					
-					theGraphics.drawImage(grassTile, i+64, j+64, theObserver);
+				// if the tile corresponds to a hill
 				} else if (theMap.getTile(i, j).getSaturation() == 0
 						&& theMap.getTile(i, j).getElevation() > 0) {
 					System.out.print(" e |");
+					
+				// if the tile corresponds to a river
 				} else if (theMap.getTile(i, j).getSaturation() == 50) {
 					System.out.print(" r |");
 					
-					theGraphics.drawImage(waterTile, i+64, j+64, theObserver);
+					theGraphics.drawImage(waterTile, i*64, j*64, theObserver);
 				} else {
 					System.out.print(" ? |");
 				}
@@ -91,7 +95,7 @@ public class MapView {
 	private static BufferedImage getGrassTile(){
 		BufferedImage grassTile = null;
 		try {
-			grassTile = ImageIO.read(new File(System.getProperty("user.dir")+"\\..\\resources\\water_tile.png"));
+			grassTile = ImageIO.read(new File(System.getProperty("user.dir")+"\\..\\resources\\grass_tile.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
