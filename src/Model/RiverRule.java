@@ -2,8 +2,13 @@ package model;
 
 public class RiverRule implements Rule {
 	
+	public static int NORTH_EDGE = 0;
+	public static int EAST_EDGE = 1;
+	public static int SOUTH_EDGE = 2;
+	public static int WEST_EDGE = 3;
+	
 	@Override
-	public Map getRuling(Map theMap) {
+	public Map getRuling(Map theMap, String[] args[]) {
 		// TODO Auto-generated method stub
 		
 		int riverStart = RandomGenerator.getInstance().nextInt(4);
@@ -15,7 +20,7 @@ public class RiverRule implements Rule {
 		int StopLocationX;
 		int StopLocationY;
 		
-		if (riverStart == 0 || riverStart == 2) {
+		if (riverStart == NORTH_EDGE || riverStart == SOUTH_EDGE) {
 			StartLocationX = RandomGenerator.getInstance().nextInt(theMap.getLengthX());
 			
 			if (riverStart == 0){
@@ -30,7 +35,7 @@ public class RiverRule implements Rule {
 			theMap.setTile(StartLocationX, StartLocationY, riverTile);
 		}
 		
-		else if (riverStart == 1 || riverStart == 3) {
+		else if (riverStart == EAST_EDGE || riverStart == WEST_EDGE) {
 			StartLocationY = RandomGenerator.getInstance().nextInt(theMap.getLengthY());
 			
 			if (riverStart == 1){
@@ -45,7 +50,7 @@ public class RiverRule implements Rule {
 			theMap.setTile(StartLocationX, StartLocationY, riverTile);
 		}
 		
-		if (riverStop == 0 || riverStop == 2) {
+		if (riverStop == NORTH_EDGE || riverStop == SOUTH_EDGE) {
 			StopLocationX = RandomGenerator.getInstance().nextInt(theMap.getLengthX());
 			
 			if (riverStop == 0){
@@ -60,7 +65,7 @@ public class RiverRule implements Rule {
 			theMap.setTile(StopLocationX, StopLocationY, riverTile);
 		}
 		
-		else if (riverStop == 1 || riverStop == 3) {
+		else if (riverStop == EAST_EDGE || riverStop == WEST_EDGE) {
 			StopLocationY = RandomGenerator.getInstance().nextInt(theMap.getLengthY());
 			
 			if (riverStart == 1){

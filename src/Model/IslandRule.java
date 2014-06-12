@@ -1,9 +1,15 @@
 package model;
 
 public class IslandRule implements Rule {
+	
+	public static int NORTH_EDGE = 0;
+	public static int EAST_EDGE = 1;
+	public static int SOUTH_EDGE = 2;
+	public static int WEST_EDGE = 3;
 
-	public Map getRuling(Map theMap) {
+	public Map getRuling(Map theMap, String args[]) {
 		surroundMap(theMap);
+		shapeMap(theMap, args);
 		
 		return theMap;
 	}
@@ -40,5 +46,23 @@ public class IslandRule implements Rule {
 			waterTile2.setSaturation(100);
 			theMap.setTile(theMap.getLengthX() - 1, i, waterTile2);
 		}
+	}
+	
+	private void shapeMap(Map theMap, String[] args){
+		// init for loop variables
+		int i;
+		int j;
+		
+		int waterPercentage = 30;
+		
+		
+		
+		
+	}
+
+	@Override
+	public Map getRuling(Map theMap, String[][] args) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

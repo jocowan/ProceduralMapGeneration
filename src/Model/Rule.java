@@ -1,5 +1,5 @@
 package model;
 
 public interface Rule {
-	public Map getRuling(Map theMap);
+	public Map getRuling(Map theMap, String[] args[]);
 }
